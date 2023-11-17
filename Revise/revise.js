@@ -156,7 +156,7 @@ const bindResult = myObj.thisFunc.bind(secondObj, x); // bind - sends parameter 
 function TaggedTemplateLiterals(string, frontend, backend) {
   console.log("string:", string);
   console.log("frontend:", frontend);
-  console.log("backend:", frontend);
+  console.log("backend:", backend);
   console.log(arguments);
 }
 
