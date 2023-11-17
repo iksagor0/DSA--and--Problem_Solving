@@ -65,7 +65,25 @@ for (const i of myObj) {
 /********************************************************
  *                   Uniques Values
  ********************************************************/
-const mixedValues = [10, 20, 30, 40, 50, 20, 25, 30, "a", "a", 0, 0, "10", false, false, true, true];
+const mixedValues = [
+  10,
+  20,
+  30,
+  40,
+  50,
+  20,
+  25,
+  30,
+  "a",
+  "a",
+  0,
+  0,
+  "10",
+  false,
+  false,
+  true,
+  true,
+];
 
 function getUniques(arr) {
   const numObj = {};
@@ -131,3 +149,15 @@ const secondObj = {
 myObj.thisFunc.call(secondObj, x); // call
 myObj.thisFunc.apply(secondObj, [x]); // apply - sends parameter by array
 const bindResult = myObj.thisFunc.bind(secondObj, x); // bind - sends parameter by array
+
+/********************************************************
+ *                   Tagged Template Literals
+ ********************************************************/
+function TaggedTemplateLiterals(string, frontend, backend) {
+  console.log("string:", string);
+  console.log("frontend:", frontend);
+  console.log("backend:", frontend);
+  console.log(arguments);
+}
+
+TaggedTemplateLiterals`I know ${"React.js"} and ${"Node.js"} by javascript`;
