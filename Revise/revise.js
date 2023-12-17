@@ -161,3 +161,64 @@ function TaggedTemplateLiterals(string, frontend, backend) {
 }
 
 TaggedTemplateLiterals`I know ${"React.js"} and ${"Node.js"} by javascript`;
+
+/********************************************************
+ *                   GENERATOR
+ ********************************************************/
+const obj = {
+  v1: 1,
+  v2: 2,
+  v3: 3,
+};
+
+function* generator(obj) {
+  // yield 1;
+  // yield 2;
+  // yield 3;
+  const entries = Object.entries(obj);
+
+  for (const iterator of entries) {
+    yield iterator[1];
+  }
+}
+
+const iterator = generator(obj);
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+
+// // **** Second Revision of Iterator ****
+// const obj = {
+//   v1: 1,
+//   v2: 2,
+//   v3: 3,
+// };
+//
+// Object.prototype[Symbol.iterator] = function (obj) {
+//   const entries = Object.keys(obj || this);
+//   const maxLength = entries.length;
+//   let index = 0;
+
+//   return {
+//     next: function () {
+//       if (index < maxLength) {
+//         const returnData = { value: entries[index][1], done: false };
+//         index++;
+//         return returnData;
+//       } else {
+//         return { value: undefined, done: true };
+//       }
+//     },
+//   };
+// };
+
+// for (const iterator of obj) {
+//   console.log("🚀 ~ iterator:", iterator);
+// }
+
+// const objIterators = Object.prototype[Symbol.iterator](obj);
+// console.log(objIterators.next());
+// console.log(objIterators.next());
+// console.log(objIterators.next());
+// console.log(objIterators.next());
