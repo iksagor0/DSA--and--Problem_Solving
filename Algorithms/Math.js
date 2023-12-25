@@ -1,8 +1,8 @@
 /********************************************************
- *           NORMAL THINK FOR FIBONACCI SEQUENCE
+ *           FIBONACCI SEQUENCE
  ********************************************************/
 
-function fibonacciNoAlg(num) {
+function fibonacci(num) {
   const result = [];
 
   // functionality
@@ -20,13 +20,11 @@ function fibonacciNoAlg(num) {
   return result;
 }
 
-console.log(fibonacciNoAlg(7)); // [0, 1, 1, 2, 3, 5, 8];
+console.log(fibonacci(7)); // [0, 1, 1, 2, 3, 5, 8];
 
-/********************************************************
- *           BEST THINK FOR FIBONACCI SEQUENCE
- ********************************************************/
+// ******** BEST THINK FOR FIBONACCI SEQUENCE ********
 
-function fibonacciNoAlg(num) {
+function fibonacci(num) {
   const result = [0, 1];
 
   // functionality
@@ -37,7 +35,7 @@ function fibonacciNoAlg(num) {
   return result;
 }
 
-console.log(fibonacciNoAlg(8)); // [0, 1, 1, 2, 3, 5, 8, 13];
+console.log(fibonacci(8)); // [0, 1, 1, 2, 3, 5, 8, 13];
 
 /********************************************************
  *                FACTORIAL OF A NUMBER
@@ -48,7 +46,7 @@ function factorial(n) {
   const num = parseInt(n);
   let result = 1;
 
-  for (let i = 2; i < num; i++) {
+  for (let i = 2; i <= num; i++) {
     result *= i;
   }
 
@@ -57,6 +55,15 @@ function factorial(n) {
 
 console.log(factorial(3)); // 3*2*1 = 6
 console.log(factorial(5)); // 120
+
+// ******************* recursive *******************
+function recursiveFactorial(n) {
+  if (n < 2) return 1;
+  console.log(n);
+  return n * recursiveFactorial(n - 1);
+}
+
+console.log("recursiveFactorial", recursiveFactorial(5)); // 120
 
 /********************************************************
  *                PRIME NUMBER
@@ -77,6 +84,7 @@ console.log(isPrimeNum(5)); // true
 /********************************************************
  *                POWER OF THREE
  ********************************************************/
+// Big O = O(logn)
 function isPowerOfThree(n) {
   if (isNaN(n) || n < 1) return false;
 
