@@ -1,12 +1,15 @@
-function fibonacciNoAlg(num) {
-  const result = [0, 1];
+/********************************************************
+ *                PRIME NUMBER
+ ********************************************************/
+function isPrimeNum(n) {
+  if (isNaN(n) || n < 2) return false;
 
-  // functionality
-  for (let i = 2; i < num; i++) {
-    result[i] = result[i - 1] + result[i - 2];
+  for (let i = 2; i < n; i++) {
+    if (n % i === 0) return false;
   }
 
-  return result;
+  return true;
 }
 
-console.log(fibonacciNoAlg(7)); // [0, 1, 1, 2, 3, 5, 8, 13];
+console.log(isPrimeNum(10)); // false
+console.log(isPrimeNum(5)); // true

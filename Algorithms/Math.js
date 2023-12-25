@@ -57,3 +57,19 @@ function factorial(n) {
 
 console.log(factorial(3)); // 3*2*1 = 6
 console.log(factorial(5)); // 120
+
+/********************************************************
+ *                PRIME NUMBER
+ ********************************************************/
+function isPrimeNum(n) {
+  if (isNaN(n) || n < 2) return false;
+
+  for (let i = 2; i < n; i++) {
+    if (n % i === 0) return false;
+  }
+
+  return true;
+}
+
+console.log(isPrimeNum(10)); // false
+console.log(isPrimeNum(5)); // true
