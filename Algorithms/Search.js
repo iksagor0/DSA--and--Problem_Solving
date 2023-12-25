@@ -18,3 +18,5 @@ function linearSearch(num) {
 
 console.log(linearSearch(32)); // 11
 console.log(linearSearch(10)); // 4
+
+// Big O = O(n)
